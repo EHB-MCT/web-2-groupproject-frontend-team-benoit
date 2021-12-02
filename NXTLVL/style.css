@@ -2,6 +2,7 @@
 
 body {
     background-color: #262626;
+    overflow-x: hidden;
 }
 
 * {
@@ -9,6 +10,20 @@ body {
     font-family: 'Murecho', sans-serif;
 }
 
+.logo {
+    position: absolute;
+    right: 6vw;
+    top: 6vh;
+    width: 10vw;
+}
+
+.challengemain {
+    position: absolute;
+    color: white;
+    font-size: 2em;
+    right: 20vw;
+    top: 20vh;
+}
 
 form {
     position: absolute;
@@ -23,7 +38,8 @@ form {
 }
 
 form>* {
-    margin: 0 3vw 2vh 0;
+    margin-top: 2vh;
+    margin-right: 1.5vh;
 }
 
 form button {
@@ -37,10 +53,13 @@ form button {
     position: absolute;
     top: 50vh;
     left: 5vw;
-    width: 90vw;
+    width: 96vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-h1 {
+.manage {
     color: white;
     top: 50vh;
     left: 5vw;
@@ -49,12 +68,24 @@ h1 {
 }
 
 #addedchallenge {
-    margin-top: 10vh;
-    height: 25vh;
+    margin: 10vh 5vw 0 0;
+    height: 30vh;
     width: 39vh;
     background-color: #faa356;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
     padding: 2%;
+
+}
+
+.imgactions {
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.imgactions img {
+    width: 2vw;
 }
