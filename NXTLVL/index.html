@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>NXTLVL</title>
+</head>
+
+<body>
+    <form>
+        <h2>Create your challenge</h2>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" id="name">
+        </div>
+        <div class="dropdown">
+            <label for="courses">Courses</label>
+            <select name="courses" id="courses">
+                <option value="web2">Web II</option>
+                <option value="dev3">Dev III</option>
+                <option value="design3">Design III</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="points">Points</label>
+            <input type="number" class="form-control" id="points" min="5" max="10">
+        </div>
+        <div class="form-group">
+            <label for="session">Session</label>
+            <input type="number" class="form-control" id="session" min="1" max="7">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <h1>Manage challenges</h1>
+    <div class="added">
+        <div id="addedchallenge">
+            <h3>Dummy name</h3>
+            <p>For WEB II</p>
+            <p>Session 4</p>
+            <p>On 10 points</p>
+            <img src="" alt="">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
