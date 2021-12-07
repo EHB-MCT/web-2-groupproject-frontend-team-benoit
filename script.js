@@ -42,7 +42,7 @@ function requestUsers() {
       userdata.push(data);
       Object.values(userdata).forEach(user => {
         document.getElementById("users").innerHTML = '';
-        console.log(challengedata);
+        console.log(userdata);
         for (let i = 0; i < user.length; i++) {
           console.log(user);
           const challenges = challengedata;
@@ -50,13 +50,18 @@ function requestUsers() {
           const userName = user[i].userName;
           const email = user[i].email;
           let HTMLString = `
-            <div id="${id}">
+            <div class="user" id="${id}">
             <h3>${userName}</h3>
             <h3>${email}</h3>
           `;
           console.log(challenges[0]);
           challenges[0].forEach(challenge => {
-            HTMLString += `<p class="Done">${challenge.name}</p>`
+            if (user[i].challenges.includes(challenge._id)) {
+              console.log("done");
+              HTMLString += `<p class="Done" data-id = "${challenge._id}">${challenge.name}</p>`
+            } else {
+              HTMLString += `<p class="ToDo" data-id = "${challenge._id}">${challenge.name}</p>`
+            }
           });
           HTMLString += '</div>'
           console.log(HTMLString)
@@ -64,7 +69,40 @@ function requestUsers() {
 
         }
       })
-    });
+    })
+    .then(() => {
+      let state;
+      for (let user of document.getElementsByClassName("user")) {
+        user.addEventListener("click", function (e) {
+          if (e.target.tagName == "P") {
+            if (e.target.className == "Done") {
+              e.target.className = "ToDo";
+              state = "false";
+            } else if (e.target.className == "ToDo") {
+              e.target.className = "Done";
+              state = "true";
+            }
+            let body = {
+              userId: e.target.parentElement.id,
+              challengeId: e.target.getAttribute("data-id"),
+              state: state
+            }
+            console.log(JSON.stringify(body));
+            fetch("http://nxt-level-api.herokuapp.com/setChallenge", {
+              method: "POST",
+              mode: "cors",
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(body)
+            }).then(res => {
+              console.log("Request complete! response:", res);
+            });
+          }
+        })
+      }
+    }
+    );
 }
 
 function removeData(element) {

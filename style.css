@@ -101,9 +101,11 @@ form button {
 }
 
 .ToDo {
-    background-color: red;
+    background-color: rgb(255, 101, 101);
+    border-radius: 10px 10px 10px 10px;
 }
 
 .Done {
-    background-color: green;
+    background-color: rgb(168, 248, 168);
+    border-radius: 10px 10px 10px 10px;
 }
