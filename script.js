@@ -17,8 +17,6 @@ function requestData() {
           const session = val[i].session;
           const points = val[i].points;
           const id = val[i]._id;
-
-          console.log(val[i]);
           document.getElementById("added").insertAdjacentHTML('beforeend', `
         <div id="${id}">
         <h3>${name}</h3>
@@ -44,8 +42,6 @@ function removeData(element) {
 
 function changeData(element) {
   const id = element.getAttribute('data-value');
-  console.log(id);
-
   let beforename = document.getElementById(id).getElementsByTagName("h3")[0].innerHTML;
   let beforecourse = document.getElementById(id).getElementsByTagName("p")[0].innerHTML;
   let beforesession = document.getElementById(id).getElementsByTagName("p")[1].innerHTML.replace(/\D/g, "");
@@ -70,7 +66,7 @@ function changeData(element) {
   }
 
   document.getElementById("name2").value = beforename;
-  console.log(document.getElementById("courses2").selectedIndex = index);
+  document.getElementById("courses2").selectedIndex = index
   document.getElementById("session2").value = beforesession;
   document.getElementById("points2").value = beforepoints;
 
@@ -106,8 +102,6 @@ function adaptData(sendData, id) {
     requestData();
   });
 }
-
-
 
 
 function postData(sendData) {
