@@ -13,44 +13,46 @@
 
     <img class="logo" src="./images/logo.png" alt="logo">
 
-    <h1 class="challengemain">The one and only EHB challenge website</h1>
-
-    <form id="form">
-        <h2>Create your challenge</h2>
-        <label for="name">Name</label>
-        <input class="form-control" id="name">
-        <label for="courses">Courses</label>
-        <select name="courses" id="courses">
-            <option value="web2">Web II</option>
-            <option value="dev3">Dev III</option>
-            <option value="design3">Design III</option>
-        </select>
-        <label for="points">Points</label>
-        <input type="number" class="form-control" id="points" min="5" max="10">
-        <label for="session">Session</label>
-        <input type="number" class="form-control" id="session" min="1" max="7">
-        <button id="submit" type="submit">Submit challenge</button>
-    </form>
-
-    <form id="formtwo">
-        <h2>Edit your challenge</h2>
-        <label for="name">Name</label>
-        <input class="form-control" id="name2">
-        <label for="courses">Courses</label>
-        <select name="courses" id="courses2">
-            <option value="Web 2">Web 2</option>
-            <option value="Dev 3">Dev 3</option>
-            <option value="Design 3">Design 3</option>
-        </select>
-        <label for="points">Points</label>
-        <input type="number" class="form-control" id="points2" min="5" max="10">
-        <label for="session">Session</label>
-        <input type="number" class="form-control" id="session2" min="1" max="7">
-        <button id="save2" type="submit">Save changes</button>
-    </form>
+    <div class="formContainer">
+        <form id="form">
+            <h2>Create your challenge</h2>
+            <label for="name">Name</label>
+            <input class="form-control" id="name">
+            <label for="courses">Courses</label>
+            <select name="courses" id="courses">
+                <option value="web2">Web II</option>
+                <option value="dev3">Dev III</option>
+                <option value="design3">Design III</option>
+            </select>
+            <label for="points">Points</label>
+            <input type="number" class="form-control" id="points" min="5" max="10">
+            <label for="session">Session</label>
+            <input type="number" class="form-control" id="session" min="1" max="7">
+            <button id="submit" type="submit">Submit challenge</button>
+        </form>
+        <form id="formtwo">
+            <h2>Edit your challenge</h2>
+            <label for="name">Name</label>
+            <input class="form-control" id="name2">
+            <label for="courses">Courses</label>
+            <select name="courses" id="courses2">
+                <option value="Web 2">Web 2</option>
+                <option value="Dev 3">Dev 3</option>
+                <option value="Design 3">Design 3</option>
+            </select>
+            <label for="points">Points</label>
+            <input type="number" class="form-control" id="points2" min="5" max="10">
+            <label for="session">Session</label>
+            <input type="number" class="form-control" id="session2" min="1" max="7">
+            <button id="save2" type="submit">Save changes</button>
+        </form>
+    </div>
 
     <h1 class="manage">Manage challenges</h1>
-    <div id="added">
+    <div class="container" id="challenges">
+    </div>
+    <h1 class="manage">Manage users</h1>
+    <div class="container" id="users">
     </div>
 
     <script src="script.js"></script>

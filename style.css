@@ -3,6 +3,9 @@
 body {
     background-color: #262626;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
 }
 
 * {
@@ -18,35 +21,20 @@ body {
 }
 
 .challengemain {
-    position: absolute;
     color: white;
     font-size: 2em;
     right: 20vw;
-    top: 20vh;
 }
 
-#formtwo {
-    position: absolute;
-    top: 5vh;
-    left: 35vw;
-    background-color: #cea5fb;
-    height: 30vh;
-    width: 20vw;
-    border-radius: 10px 10px 10px 10px;
-    padding: 5vh;
-    box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
-}
 
 form {
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
     background-color: #cea5fb;
     height: 30vh;
-    width: 20vw;
+    width: 39vh;
     border-radius: 10px 10px 10px 10px;
     padding: 5vh;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
+    margin-right: 5vw;
 }
 
 form>* {
@@ -61,10 +49,7 @@ form button {
     box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
 }
 
-#added {
-    position: absolute;
-    top: 50vh;
-    left: 5vw;
+.container {
     width: 96vw;
     display: flex;
     flex-direction: row;
@@ -73,17 +58,25 @@ form button {
 
 .manage {
     color: white;
-    top: 50vh;
-    left: 5vw;
-    position: absolute;
     font-size: 3vh;
 }
 
-#added>div {
+#challenges>div {
     margin: 10vh 5vw 0 0;
     height: 30vh;
     width: 39vh;
     background-color: #faa356;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 2%;
+}
+
+#users>div {
+    margin: 10vh 5vw 0 0;
+    height: 30vh;
+    width: 39vh;
+    background-color: #568afa;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0px 6px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -100,4 +93,17 @@ form button {
 
 .imgactions img {
     width: 2vw;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.ToDo {
+    background-color: red;
+}
+
+.Done {
+    background-color: green;
 }

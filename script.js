@@ -1,14 +1,16 @@
 "use strict"
 const baseURL = "http://nxt-level-api.herokuapp.com"
 const challengedata = [];
+const userdata = [];
 
-function requestData() {
+function requestChallenges() {
   fetch('http://nxt-level-api.herokuapp.com/challenges')
     .then(response => response.json())
     .then(data => {
       challengedata.push(data);
+      requestUsers()
       Object.values(challengedata).forEach(val => {
-        document.getElementById("added").innerHTML = '';
+        document.getElementById("challenges").innerHTML = '';
 
 
         for (let i = 0; i < val.length; i++) {
@@ -17,7 +19,7 @@ function requestData() {
           const session = val[i].session;
           const points = val[i].points;
           const id = val[i]._id;
-          document.getElementById("added").insertAdjacentHTML('beforeend', `
+          document.getElementById("challenges").insertAdjacentHTML('beforeend', `
         <div id="${id}">
         <h3>${name}</h3>
         <p>${course}</p>
@@ -30,9 +32,40 @@ function requestData() {
         </div>`)
         }
       })
-    });
+    })
 }
 
+function requestUsers() {
+  fetch('http://nxt-level-api.herokuapp.com/users')
+    .then(response => response.json())
+    .then(data => {
+      userdata.push(data);
+      Object.values(userdata).forEach(user => {
+        document.getElementById("users").innerHTML = '';
+        console.log(challengedata);
+        for (let i = 0; i < user.length; i++) {
+          console.log(user);
+          const challenges = challengedata;
+          const id = user[i]._id;
+          const userName = user[i].userName;
+          const email = user[i].email;
+          let HTMLString = `
+            <div id="${id}">
+            <h3>${userName}</h3>
+            <h3>${email}</h3>
+          `;
+          console.log(challenges[0]);
+          challenges[0].forEach(challenge => {
+            HTMLString += `<p class="Done">${challenge.name}</p>`
+          });
+          HTMLString += '</div>'
+          console.log(HTMLString)
+          document.getElementById("users").insertAdjacentHTML('beforeend', HTMLString);
+
+        }
+      })
+    });
+}
 
 function removeData(element) {
   const id = element.getAttribute('data-value');
@@ -99,7 +132,7 @@ function adaptData(sendData, id) {
     body: JSON.stringify(sendData)
   }).then(res => {
     console.log("response:", res);
-    requestData();
+    requestChallenges();
   });
 }
 
@@ -115,7 +148,7 @@ function postData(sendData) {
     body: JSON.stringify(sendData)
   }).then(res => {
     console.log("Request complete! response:", res);
-    requestData();
+    requestChallenges();
   });
 }
 
@@ -151,7 +184,7 @@ function deleteData(id) {
     },
   }).then(res => {
     console.log("Request complete! response:", res);
-    requestData();
+    requestChallenges();
   });
 }
 
@@ -159,4 +192,4 @@ function deleteData(id) {
 
 
 
-requestData();
+requestChallenges();
