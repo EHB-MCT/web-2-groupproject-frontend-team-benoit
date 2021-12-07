@@ -92,7 +92,8 @@ function requestUsers() {
               method: "POST",
               mode: "cors",
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Content-Security-Policy': 'upgrade-insecure-requests'
               },
               body: JSON.stringify(body)
             }).then(res => {
@@ -165,7 +166,8 @@ function adaptData(sendData, id) {
     method: "PUT",
     mode: "cors",
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Content-Security-Policy': 'upgrade-insecure-requests'
     },
     body: JSON.stringify(sendData)
   }).then(res => {
@@ -181,7 +183,8 @@ function postData(sendData) {
     method: "POST",
     mode: "cors",
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Content-Security-Policy': 'upgrade-insecure-requests'
     },
     body: JSON.stringify(sendData)
   }).then(res => {
@@ -218,7 +221,8 @@ function deleteData(id) {
     method: "DELETE",
     mode: "cors",
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Content-Security-Policy': 'upgrade-insecure-requests'
     },
   }).then(res => {
     console.log("Request complete! response:", res);
