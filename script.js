@@ -52,7 +52,7 @@ function requestUsers() {
           let HTMLString = `
             <div class="user" id="${id}">
             <h3>${userName}</h3>
-            <h3>${email}</h3>
+            <h4>${email}</h4>
           `;
           console.log(challenges[0]);
           challenges[0].forEach(challenge => {
