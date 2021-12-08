@@ -1,106 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@400;598&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Murecho:wght@400;598&display=swap");
 
 body {
-    background-color: #262626;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 5em;
-    margin: 3em 6em;
+  background-color: #262626;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5em;
+  margin: 3em 6em;
 }
 
 * {
-    font-family: 'Murecho', sans-serif;
-    color: white;
+  font-family: "Murecho", sans-serif;
+  color: white;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-    background-color: #cea5fb;
-    border-radius: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-color: #cea5fb;
+  border-radius: 10px 10px 10px 10px;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
-form>* {
-    margin-top: 2vh;
-    margin-right: 1.5vh;
+form > * {
+  margin-top: 2vh;
+  margin-right: 1.5vh;
 }
 
-input, select, button {
-    background-color: #262626;
-    color: white;
-    border: none;
-    border-radius: 10px 10px 10px 10px;
-    padding: 0.5em;
+input,
+select,
+button {
+  background-color: #262626;
+  color: white;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+  padding: 0.5em;
 }
 
 label {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .logo {
-    justify-self: center;
-    align-self: center;
-    width: 40%;
-    border-radius: 0;
+  justify-self: center;
+  align-self: center;
+  width: 40%;
+  border-radius: 0;
 }
 
 .manage {
-    grid-column: 1 / span 3;
+  grid-column: 1 / span 3;
 }
 
 .container {
-    width: 100%;
-    grid-column: 1 / span 3;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 5em;
-    row-gap: 5em;
-    border-radius: 10px 10px 10px 10px;
+  width: 100%;
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5em;
+  row-gap: 5em;
+  border-radius: 10px 10px 10px 10px;
 }
 
-#challenges>div {
-    background-color: #faa356;
-    border-radius: 10px 10px 10px 10px;
-    padding: 2em;
+#challenges > div {
+  background-color: #faa356;
+  border-radius: 10px 10px 10px 10px;
+  padding: 2em;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
-#users>div {
-    background-color: #8acaff;
-    border-radius: 10px 10px 10px 10px;
-    padding: 2em;
+#users > div {
+  background-color: #8acaff;
+  border-radius: 10px 10px 10px 10px;
+  padding: 2em;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 #users p {
-    color: #262626;
-    font-weight: 600;
-    padding: 0.3em 0.5em;
-    border-radius: 10px 10px 10px 10px;
-    cursor: pointer;
+  color: #262626;
+  font-weight: 600;
+  padding: 0.3em 0.5em;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
 }
 
-#users h3, h4 {
-    margin: 0.5em 0;
+#users h3,
+h4 {
+  margin: 0.5em 0;
 }
 
 .imgactions {
-    margin-top: 7vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
+  margin-top: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
 }
 
 .imgactions img {
-    max-width: 2vw;
-    max-height: 2vw;
-    margin-left: 0.5em;
-    cursor: pointer;
+  max-width: 2vw;
+  max-height: 2vw;
+  margin-left: 0.5em;
+  cursor: pointer;
 }
 
 .ToDo {
-    background-color: rgb(255, 101, 101);
+  background-color: rgb(255, 101, 101);
 }
 
 .Done {
-    background-color: rgb(168, 248, 168);
+  background-color: rgb(168, 248, 168);
 }
